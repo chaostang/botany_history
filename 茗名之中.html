@@ -1,0 +1,794 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* ==general=========== */
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* ====fonts=========== */
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+/* ====styles========== */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+    --select-text-font-color: white;
+}
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+#write {
+    max-width: 90%;
+}
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ====headings======== */
+h1 {
+    font-weight: normal;
+	font-size: 1.8em;
+	border-bottom: 1px solid;
+	padding-bottom: 0.5em;
+	margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+h2 {
+    font-weight: bold;
+    font-size: 1.3em;
+	margin-top: 2em;
+	margin-bottom: 0.5em;
+}
+h3 {
+	font-weight: bold;
+    font-size: 1.3em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+h4 {
+    font-weight: bold;
+	font-size: 1.125em;
+	margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+h5 {
+    font-weight: bold;
+    font-size: 1.125em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+h6 {
+    font-weight: bold;
+	font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* ====block spacing=== */
+p {
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+[mdtype="math_block"] {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+p + ul,
+p + ol {
+    margin-top: 0;
+}
+
+
+/* ====links=========== */
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+
+/* ====blockquote====== */
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+
+/* ====lists=========== */
+ul,
+ol {
+    margin: 0 0 0 0;
+}
+
+/* ====tables========== */
+.md-meta, .md-before, .md-after {
+	color:#999;
+}
+table {
+	margin-bottom: 1.5em;
+	font-size: 1em;
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+/* ====codes=========== */
+code,
+.md-fences {
+	background-color: #dadada;
+}
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+
+
+/* some fixes */
+
+
+
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+    padding-left: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}} .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style><title>茗名之中</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=' first-line-indent'><h2 id='茗名之中------为什么茶的拉丁学名camellia-sinensis与tea无关'><span>茗名之中——为什么茶的拉丁学名Camellia sinensis与tea无关</span></h2><p><span>虽然今人大多称其为“茶”，但由于茶饮料制法多样、茶文化影响深远，茶这种植物，在中国古代并无统一的称呼。陆羽在《茶经》中就说</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span>，“其名一曰茶，二曰槚，三曰蔎，四曰茗，五曰荈”。在茶文化发源地，茶的命名尚且如此容易混淆，在西方世界，人们对于这种神秘的东方饮料，就更容易产生种种误会。今天，这种世界饮料被英国人称为tea、被法国人称为thé、被德国人称为tee、被西班牙人称为té、被意大利人称为tè……</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span>但从茶的拉丁学名Camellia sinensis中却丝毫看不到tea的影子。这一奇特现象的出现，正是源于西方近代以来关于茶的误会以及历史的机缘巧合。</span></p><p><span>常用名与学名不同是非常常见的现象，例如土豆的学名</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup><span>是阳芋Solanum tuberosum。此外，原产于东方的植物拉丁学名，从属于命名自原产于西方的植物的更高级别分类，也不在少数，例如月季花Rosa chinensis就从属于命名自玫瑰的蔷薇属。但茶的情况与此二者不同。比较整合分类学资讯系统</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><span>（Integrated Taxonomic Information System, ITIS）与物种2000中国节点</span><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span>，茶及其近亲的拉丁学名与中文学名可以大致对照如下：</span></p><ul><li><p><span>山茶科Theaceae（常用名tea）</span></p><ul><li><p><span>山茶属Camellia（常用名tea）</span></p><ul><li><span>茶C. sinensis</span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span>（常用名tea）</span></li><li><span>山茶C. japonica（常用名camellia）</span></li><li><span>滇山茶C. reticulata</span></li><li><span>……</span></li></ul></li><li><p><span>旃檀属Stewartia</span></p></li><li><p><span>……</span></p></li></ul></li></ul><p><span>显然，常用名tea是科名Theaceae的词根，因此C. sinensis中不包含tea并非出于通用名词与专有名词之间的矛盾。另一方面，在中文学名甚至不是“茶科”而是“山茶科”的情况下，词根tea能够进入主要物种均来自东方的科名Theaceae中、却反而没有进入属名Camellia中，就更显奇怪。此外，属名Camellia来自山茶C. japonica的常用名，自然有其缘故。由此可见，一定是特殊原因导致被广泛使用的tea没能成为属名。</span></p><p><span>谈到植物命名，无法回避Carl Linnaeus（受封贵族后为Carl von Linné）的《植物种志（Species Plantarum）》，茶也不例外。</span></p><center>
+	(a)<img src="图1a.jpg" width="300/">
+	(b)<img src="图1b.jpg" width="300/">
+</center><blockquote><p><strong><span>图1</span></strong><span> (a). Thea sinensis, 见于初版《植物种志》第一卷515页</span><sup class='md-footnote'><a href='#dfref-footnote-7' name='ref-footnote-7'>7</a></sup><span>. (b). Camellia japonica, 见于初版《植物种志》第二卷698页</span><sup class='md-footnote'><a href='#dfref-footnote-8' name='ref-footnote-8'>8</a></sup><span>.</span></p></blockquote><center>
+	(a)<img src="图2a.jpg" height="450/">
+	(b)<img src="图2b.jpg" height="450/">
+</center><blockquote><p><strong><span>图2</span></strong><span> (a). thea见于《异域采风记》605-6页</span><sup class='md-footnote'><a href='#dfref-footnote-9' name='ref-footnote-9'>9</a></sup><span>. (b). tsubaki见于《异域采风记》850-1页.</span></p></blockquote><p><span>关于茶，在1753年初版的《植物种志》第一卷和第二卷中，分别记载了两种植物Thea sinensis与Camellia japonica（图1），并且注释中说明两者都参考了Engelbert Kaempfer的著作《异域采风记（Amoenitatum Exoticarum）》（图2）。Kaempfer是德国探险家、博物学家</span><sup class='md-footnote'><a href='#dfref-footnote-10' name='ref-footnote-10'>10</a></sup><span>，于1690至1692年旅居日本，《异域采风记》是其两部游记之一，出版于1712年，其中记载了大量有关日本及周边国家的植物。Linnaeus对其人及著作评价甚高，例如银杏属名Ginkgo就是直接采用了Kaempfer的记载</span><sup class='md-footnote'><a href='#dfref-footnote-11' name='ref-footnote-11'>11</a></sup><span>。很明显，属名Thea是直接采用了Kaempfer的表述，但属名Camellia却没有直接采用Kaempfer的tsubaki。</span></p><p><span>属名Camellia，普遍认为是为了耶稣会传教士、博物学家Georg Joseph Kamel而取</span><sup class='md-footnote'><a href='#dfref-footnote-12' name='ref-footnote-12'>12</a></sup><span>。Kamel</span><sup class='md-footnote'><a href='#dfref-footnote-13' name='ref-footnote-13'>13</a></sup><span>以传教士身份于1687年抵达菲律宾，在旅菲期间，对于当地动植物都有大量记载，虽然他并未留下任何关于茶或山茶的记录。不过，Kamel的著作在欧洲并没有产生巨大影响，Linnaeus对其学术评价也不高</span><sup class='md-footnote'><a href='#dfref-footnote-14' name='ref-footnote-14'>14</a></sup><span>，称他“Descriptiones imperfectae. Florum nulla notita.（记载不完善，没有对花的描述）”。</span></p><p><span>由此可见，在初版《植物种志》中，Linnaeus依据《异域采风记》分辨了Thea sinensis（茶）与Camellia japonica（山茶）两种植物，但错误地认为两种植物属于不同的属。这使得Camellia一词有了“可乘之机”——假如Linnaeus正确地认识到两种植物同属一属，考虑到他对于Kaempfer的推崇和对于Kamel的批评，很有可能这唯一的“茶属”会被命名为Thea。正因Linnaeus的这一错误，他不得不“勉为其难”地用Kamel命名一个本不应存在的属。</span></p><p><span>当然，并不能因此苛责Linnaeus，因为在18世纪，西方对于茶的认识非常匮乏，不仅不知道茶和山茶是什么关系，甚至连红茶和绿茶的关系都不清楚。在1762年《植物种志》再版第一卷（图3）中，Linnaeus甚至改对为错，将Thea属下的T. sinensis除去，代之以T. bohea与T. viridis两个物种。从注释上看，他是参考了John Hill的著作《异国植物图鉴（Exotic Botany Illustratic）》（图4），将T. sinensis改称T. bohea，并另加新条目T. viridis</span><sup class='md-footnote'><a href='#dfref-footnote-15' name='ref-footnote-15'>15</a></sup><span>。</span></p><center>
+	(a)<img src="图3a.jpg" width="300/">
+  (b)<img src="图3b.jpg" width="300/">
+</center><blockquote><p><strong><span>图3</span></strong><span> (a)(b). T. bohea与T. viridis见于再版《植物种志》第一卷734-5页</span><sup class='md-footnote'><a href='#dfref-footnote-16' name='ref-footnote-16'>16</a></sup><span>.</span></p></blockquote><center>
+	(a)<img src="图4a.jpg" height="450/">
+	(b)<img src="图4b.jpg" height="450/">
+</center><blockquote><p><strong><span>图4</span></strong><span> (a). Bohea tea见于《异国植物图鉴》第21项</span><sup class='md-footnote'><a href='#dfref-footnote-17' name='ref-footnote-17'>17</a></sup><span>. (b). Green tea见于《异国植物图鉴》第22项.</span></p></blockquote><p><span>这种对于红茶与绿茶的错误区分事实上在欧洲大众的思想里根深蒂固</span><sup class='md-footnote'><a href='#dfref-footnote-18' name='ref-footnote-18'>18</a></sup><span>，毕竟两种饮料看起来那样不同。虽然Kaempfer等旅中或旅日探险家的确清楚不同茶饮料来自同种植物，但欧洲学者Francois Valentyn、Jonas Hanway、John Hill等人却以讹传讹，毫无根据地声称红茶与绿茶来自不同植物，而这些学者及其著作又对Linnaeus产生了很大影响，例如Hill与Linnaeus虽未曾见面却常有书信往来，且在英国大力推广其著作。在一系列学者的误传之下，Linnaeus动摇了，并最终在第二版《植物种志》中改对为错。这一误会几乎持续了一整个世纪，一切尘埃落定要等到1843年，Robert Fortune被派往中国“偷师”</span><sup class='md-footnote'><a href='#dfref-footnote-19' name='ref-footnote-19'>19</a></sup><span>，才最终使关于茶的正确认识得到普及。</span></p><p><span>在1772年至1843年之间，植物学家们通过更加仔细地比较植物标本，逐渐意识到</span><sup class='md-footnote'><a href='#dfref-footnote-20' name='ref-footnote-20'>20</a></sup><span>，不仅红茶T. bohea与绿茶T. viridis实为同一种植物，它们和山茶Camellia japonica也是近亲。1772年John Coakley Lettsom首先明确指出红茶与绿茶产自同种植物，“据观察，把绿茶树种在红茶茶乡，就会产出红茶，反之亦然”（图5(a)）。随后，1807年John Sims在把红茶与绿茶视为同种植物Thea chinensis的基础上，提及Thea与Camellia也应归入同一个属，但却“不愿意更改属名”，希望“等所有相关的植物都被仔细研究之后”再作定夺（图5(b)(c)）。1818年，Robert Sweet在编目伦敦植物时，首先将C. bohea、C. viridis、C. japonica全部归入Camellia属，不过没有更多说明（图5(d)）。1824年，Augustin Pyrame de Candolle在正确将T. bohea与T. viridis归为同一种T. chinensis的基础上，将Thea属与C. japonica所在的Camellia属归为同一目Camellia（图5(e)(f)）。</span></p><center>
+	(a)<img src="图5a.jpg" height="450/">
+	<br>
+	(b)<img src="图5b.jpg" height="450/">
+	(c)<img src="图5c.jpg" height="450/">
+	<br>
+	(d)<img src="图5d.jpg" height="450/">
+	<br>
+	(e)<img src="图5e.jpg" height="450/">
+	(f)<img src="图5f.jpg" height="450/">
+</center><blockquote><p><strong><span>图5</span></strong><span> (a). 1772年Lettsom指出只有一种茶植物</span><sup class='md-footnote'><a href='#dfref-footnote-21' name='ref-footnote-21'>21</a></sup><span>. (b)(c). 1807年Sims提出只有一个属</span><sup class='md-footnote'><a href='#dfref-footnote-22' name='ref-footnote-22'>22</a></sup><span>. (d). 1818年Sweet将三种植物归入Camellia属</span><sup class='md-footnote'><a href='#dfref-footnote-23' name='ref-footnote-23'>23</a></sup><span>, 红框为笔者所加. (e)(f). 1824年de Candolle将Thea属与Camellia属归入Camellia目</span><sup class='md-footnote'><a href='#dfref-footnote-24' name='ref-footnote-24'>24</a></sup><span>.</span></p></blockquote><p><span>随着1906年学术界达成共识</span><sup class='md-footnote'><a href='#dfref-footnote-25' name='ref-footnote-25'>25</a></sup><span>并订立《国际植物命名法规（International Code of Botanical Nomenclature）》</span><sup class='md-footnote'><a href='#dfref-footnote-26' name='ref-footnote-26'>26</a></sup><span>，植物命名有了标准的原则。根据2018年最新版本的《法规》13.4条注释1，Linnaeus的两卷《植物种志》，虽然出版时间相差三个月，但应视作同时出版。这样一来，茶同时拥有了两个属名：Thea（第一卷）与Camellia（第二卷）。在出现这种分歧时，根据11.5条，应采取此后最早的有效出版物的选择。对于茶，在《植物种志》初版后，首先明确将其与山茶同属一属的是Sweet。虽然他仍然错误地区分了C. bohea与C. viridis，但却明确选择了Camellia作为属名而Thea作为别名。因此，茶的属名被确定为Camellia，结合初版《植物种志》中T. sinensis的条目，茶的学名最终成了C. sinensis，虽然植物学家也为tea这个词根打抱不平而最终将Camellia属所在科命名为Theaceae。细究起来，历史上，最早明确两卷《植物种志》视作同时出版的是1950年版《法规》（在该版中为第20条）。如果没有这一条款，将《植物种志》第一卷视为首先出版，那么茶与山茶的属名就应同为Thea。</span></p><p><span>由此可见，茶的学名被最终确定为Camellia sinensis之前，有一段颇为曲折的历史，充满各种巧合——第一，恰巧Linnaeus误认为茶与山茶不同属，否则有极大可能Camellia这个属名根本不会存在；第二，恰巧Sweet将红茶、绿茶、山茶收入同一个属时采用了Camellia作为属名；第三，恰巧在Sweet之前的学者没有坚定到将茶与山茶明确为同属；第四，恰巧首先正确分类红茶、绿茶、山茶的de Candolle发表文献晚于Sweet；第五，恰巧《法规》将两卷《植物种志》视为同时出版，否则追溯至第一卷中仍应采取Thea作为属名。</span></p><p><span>不过，巧合之中也有必然性，诞生于西方的现代科学与现代植物学命名体系，将历史上由于文化交流不畅造成的误会留存至今。每每想及此处，笔者总不免为tea没能出现在“属+种差”这个直接的拉丁学名之中而深感遗憾。</span></p><p>&nbsp;</p><hr /><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <a href='https://ctext.org/wiki.pl?if=gb&amp;chapter=563466' target='_blank' class='url'>https://ctext.org/wiki.pl?if=gb&chapter=563466</a><span>, 《茶经·一之源》, 中国哲学书电子化计划.</span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>2</span> <span>与大部分西欧语言不同, 在葡萄牙语中茶甚至就是chá, 这是由于早年葡萄牙与中国的贸易主要在广东进行, 而欧洲大部分地区tea的读音都源自在福建进行贸易的荷兰. 参见George van Driem, </span><em><span>The Tale of Tea: A Comprehensive History of Tea from Prehistoric Times to the Present Day</span></em><span>, Brill, 2019.</span> <a name='dfref-footnote-2' href='#ref-footnote-2' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>3</span> <span>本文出现的所有植物当代学名均来自ITIS（拉丁文）与物种2000中国节点（中文）数据库, 见后.</span> <a name='dfref-footnote-3' href='#ref-footnote-3' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>4</span> <a href='http://www.itis.gov/' target='_blank' class='url'>http://www.itis.gov/</a><span>, Integrated Taxonomic Information System.</span> <a name='dfref-footnote-4' href='#ref-footnote-4' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>5</span> <a href='http://www.sp2000.org.cn/' target='_blank' class='url'>http://www.sp2000.org.cn/</a><span>, 物种2000中国节点.</span> <a name='dfref-footnote-5' href='#ref-footnote-5' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>6</span> <span>种加词sinensis意为“来自中国”, 下文japonica意为“来自日本”.</span> <a name='dfref-footnote-6' href='#ref-footnote-6' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>7</span> <a href='https://www.biodiversitylibrary.org/item/13829' target='_blank' class='url'>https://www.biodiversitylibrary.org/item/13829</a><span>, </span><em><span>Species Plantarum</span></em><span>, vol. 1, Biodiversity Heritage Library.</span> <a name='dfref-footnote-7' href='#ref-footnote-7' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>8</span> <a href='https://www.biodiversitylibrary.org/item/13830' target='_blank' class='url'>https://www.biodiversitylibrary.org/item/13830</a><span>, </span><em><span>Species Plantarum</span></em><span>, vol. 2, Biodiversity Heritage Library.</span> <a name='dfref-footnote-8' href='#ref-footnote-8' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>9</span> <a href='https://www.biodiversitylibrary.org/item/247417' target='_blank' class='url'>https://www.biodiversitylibrary.org/item/247417</a><span>, </span><em><span>Amoenitatum Exoticarum</span></em><span>, Biodiversity Heritage Library.</span> <a name='dfref-footnote-9' href='#ref-footnote-9' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>10</span> <a href='https://en.wikipedia.org/wiki/Engelbert_Kaempfer' target='_blank' class='url'>https://en.wikipedia.org/wiki/Engelbert_Kaempfer</a><span>, Engelbert Kaempfer, Wikipedia.</span> <a name='dfref-footnote-10' href='#ref-footnote-10' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>11</span> <a href='https://www.nature.com/articles/448139a' target='_blank' class='url'>https://www.nature.com/articles/448139a</a><span>, </span><em><span>Linnaeus and taxonomy in Japan</span></em><span>, His Majesty The Emperor of Japan, Nature 448, 139-140 (2007). 这是一篇平成天皇的演讲.</span> <a name='dfref-footnote-11' href='#ref-footnote-11' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>12</span> <span>见</span><em><span>The Tale of Tea</span></em><span>.</span> <a name='dfref-footnote-12' href='#ref-footnote-12' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>13</span> <a href='https://en.wikipedia.org/wiki/Georg_Joseph_Kamel' target='_blank' class='url'>https://en.wikipedia.org/wiki/Georg_Joseph_Kamel</a><span>, Georg Joseph Kamel, Wikipedia.</span> <a name='dfref-footnote-13' href='#ref-footnote-13' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>14</span> <a href='https://www.euppublishing.com/doi/10.3366/E0260954109000989' target='_blank' class='url'>https://www.euppublishing.com/doi/10.3366/E0260954109000989</a><span>, </span><em><span>Botany and zoology in the late seventeenth-century Philippines: the work of Georg Josef Camel SJ (1661-1706)</span></em><span>, Raquel A. G. Reyes, Archives of Natural History 36 (2), 262-76 (2009).</span> <a name='dfref-footnote-14' href='#ref-footnote-14' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>15</span> <span>种加词viridis意为“绿色”, 前文bohea是武夷茶即红茶的音译.</span> <a name='dfref-footnote-15' href='#ref-footnote-15' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>16</span> <a href='https://bibdigital.rjb.csic.es/records/item/10612-redirection' target='_blank' class='url'>https://bibdigital.rjb.csic.es/records/item/10612-redirection</a><span>, </span><em><span>Species Plantarum</span></em><span>, vol. 1, 2nd ed, Biblioteca Digital.</span> <a name='dfref-footnote-16' href='#ref-footnote-16' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>17</span> <a href='https://www.biodiversitylibrary.org/item/214429' target='_blank' class='url'>https://www.biodiversitylibrary.org/item/214429</a><span>, </span><em><span>Exotic Botany Illustrated</span></em><span>, Biodiversity Heritage Library.</span> <a name='dfref-footnote-17' href='#ref-footnote-17' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>18</span> <span>历史上欧洲人有关红茶与绿茶的误会见</span><em><span>The Tale of Tea</span></em><span>.</span> <a name='dfref-footnote-18' href='#ref-footnote-18' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>19</span> <span>《南京条约》开放五口通商, Fortune在上海入境, 乔装打扮为清人模样, 打探搜集与茶相关的一切信息.</span> <a name='dfref-footnote-19' href='#ref-footnote-19' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>20</span> <span>本段相关文献参考自</span><em><span>The Tale of Tea</span></em><span>, 但该书部分细节有误, 例如Sims著作的出版年份被写作1808年. 本段所有引用均来自一手文献.</span> <a name='dfref-footnote-20' href='#ref-footnote-20' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>21</span> <a href='https://archive.org/details/b3041104x' target='_blank' class='url'>https://archive.org/details/b3041104x</a><span>, </span><em><span>The natural history of the tea-tree</span></em><span>, p. 7, Internet Archive.</span> <a name='dfref-footnote-21' href='#ref-footnote-21' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>22</span> <a href='https://archive.org/details/s1id13292270' target='_blank' class='url'>https://archive.org/details/s1id13292270</a><span>, </span><em><span>Curtis’s botanical magazine</span></em><span>, vol. 25, no. 998, Internet Archive.</span> <a name='dfref-footnote-22' href='#ref-footnote-22' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>23</span> <a href='https://www.biodiversitylibrary.org/bibliography/109914' target='_blank' class='url'>https://www.biodiversitylibrary.org/bibliography/109914</a><span>, </span><em><span>Hortus surburbanus Londinensis</span></em><span>, p. 157, Biodiversity Heritage Library.</span> <a name='dfref-footnote-23' href='#ref-footnote-23' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>24</span> <a href='https://bibdigital.rjb.csic.es/viewer/14907' target='_blank' class='url'>https://bibdigital.rjb.csic.es/viewer/14907</a><span>, </span><em><span>Prodromus Systematis Naturalis Regni Vegetalis</span></em><span>, part one, p. 529-30, Biblioteca Digital.</span> <a name='dfref-footnote-24' href='#ref-footnote-24' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>25</span> <a href='https://www.iapt-taxon.org/historic/index.htm' target='_blank' class='url'>https://www.iapt-taxon.org/historic/index.htm</a><span>, Overview of editions of the Code, International Association for Plant Taxonomy. 这里收集了《法规》的历代版本. 后文所述各版《法规》条款均出自此处.</span> <a name='dfref-footnote-25' href='#ref-footnote-25' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>26</span> <span>在2011年国际植物学大会上, 《国际植物命名法规》被更名为《国际藻类、真菌与植物命名法规（International Code of Nomenclature for algea, fungi, and plants）》并沿用至今.</span> <a name='dfref-footnote-26' href='#ref-footnote-26' title='back to document' class='reversefootnote' >↩</a></div></div></div></div>
+</body>
+</html>
